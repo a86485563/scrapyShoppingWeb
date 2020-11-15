@@ -1,0 +1,5 @@
+start scrapy crawl "dmoz"
+scrapy crawl momospider -o quotes.json
+css selecor :
+[htmltag."className"]>... >[htmltag."className"::text]
+                            >[htmltag."className"::attr("href")]
