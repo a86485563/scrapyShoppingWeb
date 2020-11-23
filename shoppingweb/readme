@@ -1,5 +1,9 @@
-start scrapy crawl "dmoz"
+start scrapy crawl "quotesName"
 scrapy crawl momospider -o quotes.json
 css selecor :
 [htmltag."className"]>... >[htmltag."className"::text]
                             >[htmltag."className"::attr("href")]
+proxysetting:
+env setting
+set HTTP_PROXY=http://biquanyan:1234asdf@fetfw.fareastone.com.tw:8080
+set HTTPS_PROXY=https://biquanyan:1234asdf@fetfw.fareastone.com.tw:8080

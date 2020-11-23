@@ -47,10 +47,10 @@ class ExampleSpider(scrapy.Spider):
                 'status': boolStatus
             }
         if boolHaveNext:
-            intCurrentPage = int(strCurrentPage) +1
+            self.start_pageIndex = self.start_pageIndex +1
             next_page_url = 'https://m.momoshop.com.tw/search.momo?_advFirst=N&_advCp=N&curPage={}&searchType=1&cateLevel=2&ent=k&searchKeyword={}&_advThreeHours=N&_isFuzzy=0&_imgSH=fourCardType'.format(
-                intCurrentPage, 'iphone')
-            self.logger.info('intCurrentPage %s', intCurrentPage)
+                self.start_pageIndex, 'iphone')
+            self.logger.info('intCurrentPage %s', self.start_pageIndex)
             self.logger.info('next_page_url %s',next_page_url)
             yield Request(next_page_url,headers=self.header,callback=self.parse,dont_filter=True)
 
